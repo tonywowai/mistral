@@ -1,5 +1,263 @@
 #model_marketplace.config
-# {"token_length": "4018", "accuracy": "70", "precision": "fp16", "sampling_frequency:": "44100", "mono": true, "fps": "74", "resolution": "480", "image_width": "1080", "image_height": "1920", "framework": "transformers", "dataset_format": "llm", "dataset_sample": "[id on s3]", "weights": [{"name": "deepseek-ai/DeepSeek-R1", "value": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", "size": 260, "paramasters": "12B", "tflops": 12, "vram": 12, "nodes": 1}], "cuda": "11.4", "task": ["chatbot", "chat", "text-generation", "text-classification", "text-summarization", "text-ner", "question-answering"]}
+
+# {
+#   "token_length": "4018",
+#   "accuracy": "70",
+#   "precision": "fp16",
+#   "sampling_frequency:": "44100",
+#   "mono": true,
+#   "fps": "74",
+#   "resolution": "480",
+#   "image_width": "1080",
+#   "image_height": "1920",
+#   "framework": "transformers",
+#   "dataset_format": "llm",
+#   "dataset_sample": "[id on s3]",
+#   "weights": [
+#     {
+#       "name": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+#       "value": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Mistral-Nemo-Instruct-FP8-2407",
+#       "value": "mistralai/Mistral-Nemo-Instruct-FP8-2407",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Mistral-Small-3.1-24B-Base-2503",
+#       "value": "mistralai/Mistral-Small-3.1-24B-Base-2503",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Pixtral-Large-Instruct-2411",
+#       "value": "mistralai/Pixtral-Large-Instruct-2411",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Pixtral-12B-Base-2409",
+#       "value": "mistralai/Pixtral-12B-Base-2409",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Mistral-Small-24B-Instruct-2501",
+#       "value": "mistralai/Mistral-Small-24B-Instruct-2501",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Mistral-Small-24B-Base-2501",
+#       "value": "mistralai/Mistral-Small-24B-Base-2501",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Pixtral-12B-2409",
+#       "value": "mistralai/Pixtral-12B-2409",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Ministral-8B-Instruct-2410",
+#       "value": "mistralai/Ministral-8B-Instruct-2410",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Mistral-Large-Instruct-2411",
+#       "value": "mistralai/Mistral-Large-Instruct-2411",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Mistral-Nemo-Base-2407",
+#       "value": "mistralai/Mistral-Nemo-Base-2407",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Mistral-Nemo-Instruct-2407",
+#       "value": "mistralai/Mistral-Nemo-Instruct-2407",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Mistral-Small-Instruct-2409",
+#       "value": "mistralai/Mistral-Small-Instruct-2409",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Mistral-Large-Instruct-2407",
+#       "value": "mistralai/Mistral-Large-Instruct-2407",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Mixtral-8x22B-v0.1",
+#       "value": "mistralai/Mixtral-8x22B-v0.1",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Mixtral-8x22B-Instruct-v0.1",
+#       "value": "mistralai/Mixtral-8x22B-Instruct-v0.1",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Mistral-7B-Instruct-v0.2",
+#       "value": "mistralai/Mistral-7B-Instruct-v0.2",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Mamba-Codestral-7B-v0.1",
+#       "value": "mistralai/Mamba-Codestral-7B-v0.1",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Mistral-7B-Instruct-v0.1",
+#       "value": "mistralai/Mistral-7B-Instruct-v0.1",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Mistral-7B-Instruct-v0.3",
+#       "value": "mistralai/Mistral-7B-Instruct-v0.3",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Mixtral-8x7B-Instruct-v0.1",
+#       "value": "mistralai/Mixtral-8x7B-Instruct-v0.1",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Mathstral-7B-v0.1   mistralai/Mathstral-7B-v0.1",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Codestral-22B-v0.1",
+#       "value": "mistralai/Codestral-22B-v0.1",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Mistral-7B-v0.1",
+#       "value": "mistralai/Mistral-7B-v0.1",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     }{
+#       "name": "mistralai/Mixtral-8x7B-v0.1",
+#       "value": "mistralai/Mixtral-8x7B-v0.1",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     },
+#     {
+#       "name": "mistralai/Mistral-7B-v0.3",
+#       "value": "mistralai/Mistral-7B-v0.3",
+#       "size": 260,
+#       "paramasters": "12B",
+#       "tflops": 12,
+#       "vram": 12,
+#       "nodes": 1
+#     }
+#   ],
+#   "cuda": "11.4",
+#   "task": [
+#     "chatbot",
+#     "chat",
+#     "text-generation",
+#     "text-classification",
+#     "text-summarization",
+#     "text-ner",
+#     "question-answering"
+#   ]
+# }
 
 # import math
 # import pathlib
@@ -41,7 +299,7 @@ if torch.cuda.is_available():
     
     _model = pipeline(
         "text-generation",
-        model="meta-llama/Llama-4-Scout-17B-16E-Instruct", 
+        model="mistralai/Mistral-7B-v0.3", 
         torch_dtype=dtype, 
         device_map="auto",  # Hoặc có thể thử "cpu" nếu không ổn,
         max_new_tokens=256,
@@ -51,7 +309,7 @@ else:
     print("No GPU available, using CPU.")
     _model = pipeline(
         "text-generation",
-        model="meta-llama/Llama-4-Scout-17B-16E-Instruct", 
+        model="mistralai/Mistral-7B-v0.3", 
         device_map="cpu",
         max_new_tokens=256,
         token = hf_token
@@ -95,7 +353,7 @@ class MyModel(AIxBlockMLBase):
                 import threading
                 import os
 
-                model_id = kwargs.get("model_id", "meta-llama/Llama-4-Scout-17B-16E-Instruct")  #"tiiuae/falcon-7b" "bigscience/bloomz-1b7" `zanchat/falcon-1b` `appvoid/llama-3-1b` meta-llama/Llama-4-Scout-17B-16E-Instruct` `mistralai/Mistral-7B-v0.1` `bigscience/bloomz-1b7` `Qwen/Qwen2-1.5B`
+                model_id = kwargs.get("model_id", "mistralai/Mistral-7B-v0.3")  #"tiiuae/falcon-7b" "bigscience/bloomz-1b7" `zanchat/falcon-1b` `appvoid/llama-3-1b` mistralai/Mistral-7B-v0.3` `mistralai/Mistral-7B-v0.1` `bigscience/bloomz-1b7` `Qwen/Qwen2-1.5B`
                 dataset_id = kwargs.get("dataset_id","timdettmers/openassistant-guanaco") #gingdev/llama_vi_52k kigner/ruozhiba-llama3-tt
 
                 push_to_hub = kwargs.get("push_to_hub", True)
@@ -484,7 +742,7 @@ class MyModel(AIxBlockMLBase):
                 import torch
 
                 prompt = kwargs.get("prompt", None)
-                model_id = kwargs.get("model_id", "meta-llama/Llama-4-Scout-17B-16E-Instruct")
+                model_id = kwargs.get("model_id", "mistralai/Mistral-7B-v0.3")
                 text = kwargs.get("text", None)
                 token_length = kwargs.get("token_lenght", 30)
                 task = kwargs.get("task", "")
@@ -1191,9 +1449,9 @@ class MyModel(AIxBlockMLBase):
         from transformers import pipeline
         # task = kwargs.get("task", "text-generation")
         task = kwargs.get("task", "chat")
-        model_id = kwargs.get("model_id", "meta-llama/Llama-4-Scout-17B-16E-Instruct")
-        # if "deepseek" not in "meta-llama/Llama-4-Scout-17B-16E-Instruct":
-        #      model_id =  "meta-llama/Llama-4-Scout-17B-16E-Instruct"
+        model_id = kwargs.get("model_id", "mistralai/Mistral-7B-v0.3")
+        # if "deepseek" not in "mistralai/Mistral-7B-v0.3":
+        #      model_id =  "mistralai/Mistral-7B-v0.3"
         project_id = kwargs.get("project_id", 0)
 
         print(f'''\
